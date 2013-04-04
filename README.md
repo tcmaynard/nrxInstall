@@ -1,0 +1,4 @@
+nrxInstall
+==========
+
+NetRexx installation configuration
