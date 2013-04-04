@@ -20,5 +20,5 @@ compile nrxInstall.xml [-o output.jar]
 ```
 The default behavior is to name the JAR the same as the XML.
 
-For completeness, the resulting JAR is also included here ... but it rather wasteful since it is so easily generated
+For completeness, the resulting JAR is also included here ... but it is rather wasteful since it is so easily generated
 locally after cloning the files above.
