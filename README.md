@@ -4,7 +4,8 @@ nrxInstall
 NetRexx installation configuration
 ----------------------------------
 
-Find here all the ancillary files required to compile the executable JAR file containing a NetRexx distribution.
+Find here all the ancillary files required to compile the executable JAR file containing a NetRexx distribution. The
+installation uses [IzPack](http://izpack.org/).
 
 The files are:
 - nrxInstall.xml
