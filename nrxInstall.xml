@@ -95,7 +95,7 @@
       <pack name="Config" required="yes">
       <description>The NetRexx system configuration file</description>
       <file src="readme.txt" targetdir="$INSTALL_PATH"/>
-      <file src="readme.first.txt" targetdir="$INSTALL_PATH"/>
+      <file src="read.me.first" targetdir="$INSTALL_PATH"/>
       <file src="LICENSE" targetdir="$INSTALL_PATH"/>
       <file src="releasenotes.txt" targetdir="$INSTALL_PATH"/>
     </pack>
