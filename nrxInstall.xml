@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+
+<!-- 
+    NetRexx Installation Description, using IzPack v4.x
+
+    Revision History:
+	<0>	TCM	24-Dec-2011	Birthday
+	<1>	TCM	31-Mar-2013	Update for NetRexx v3.02(RC)
+	<2> TCM 01-Apr-2013	Touch-ups for testing
+    <3> TCM 02-Apr-2013 Minor tweaks for Linux installations
+    <4> TCM 03-Apr-2013 MFC reference, Mac default dir
+
+    To compile it:
+    - Put the IzPack bin directory in your PATH
+    - Put the installer extra files in a typical distro
+    - compile install.xml (i.e. this file)
+-->
+
+<installation version="1.0">
+    <!-- 
+        The info section.
+        The meaning of the tags should be obvious ...
+    -->
+    <info>
+        <appname>NetRexx</appname>
+        <appversion>3.02</appversion>
+		<appsubpath>netrexx</appsubpath>
+		<javaversion>1.5</javaversion>
+        <requiresjdk>no</requiresjdk>
+
+		<writeinstallationinformation>no</writeinstallationinformation>
+
+		<authors>
+            <author name="M.F. Cowlishaw (http://speleotrove.com/mfc)" email=""/>
+			<author name="Rexx Language Association" email="info@rexxla.org"/>
+		</authors>
+		<url>http://rexxla.org</url>
+
+		<uninstaller name="nrxUninstall.jar"/>
+    </info>
+
+    <!-- 
+        The gui preferences indication.
+		Note: The size below is set to accomodate the longest line
+			  in the readme.first.txt file, so no scrollbars appear
+		The user will be able to change the window size.
+    -->
+    <guiprefs width="980" height="480" resizable="yes"/>
+
+    <!-- 
+        The locale section.
+        Only English is supported at the moment
+    -->
+    <locale>
+        <langpack iso3="eng"/>
+    </locale>
+
+    <!-- 
+        The resources section.
+        These ids are required to use the LicencePanel and/or the InfoPanel.
+		The TargetPanel sets the installation target (on Windows) according
+		to the contents of its file.
+    -->
+    <resources>
+        <!-- NetRexx or REXX image selection
+        <res id="Installer.image" src="NetRexxLogo.gif"/>
+        -->
+        <res id="Installer.image" src="NetRexxKingSmall.gif"/>
+        <res id="LicencePanel.licence" src="LICENSE"/>
+        <res id="InfoPanel.info" src="read.me.first"/>
+		<res id="TargetPanel.dir.windows" src="TargetPanel.dir.windows"/>
+        <res id="TargetPanel.dir.unix" src="TargetPanel.dir.unix"/>
+        <res id="TargetPanel.dir.mac" src="TargetPanel.dir.mac"/>
+    </resources>
+
+    <!-- 
+        The panels section.
+        We indicate here which panels we want to use. The order will be respected.
+    -->
+    <panels>
+        <panel classname="HelloPanel"/>
+        <panel classname="InfoPanel"/>
+        <panel classname="LicencePanel"/>
+        <panel classname="TargetPanel"/>
+        <panel classname="PacksPanel"/>
+        <panel classname="InstallPanel"/>
+        <panel classname="FinishPanel"/>
+    </panels>
+
+    <!-- 
+        The packs section.
+        Description of exactly what gets installed, and where
+    -->
+    <packs>
+        <pack name="Config" required="yes">
+			<description>The NetRexx system configuration file</description>
+			<file src="readme.txt" targetdir="$INSTALL_PATH"/>
+            <file src="readme.first.txt" targetdir="$INSTALL_PATH"/>
+			<file src="LICENSE" targetdir="$INSTALL_PATH"/>
+			<file src="releasenotes.txt" targetdir="$INSTALL_PATH"/>
+        </pack>
+
+		<pack name="Scripts" required="yes">
+			<description>NetRexx command line scripts</description>
+			<file src="bin" targetdir="$INSTALL_PATH"/>
+		</pack>
+
+        <pack name="Documentation" required="no">
+            <description>NetRexx User Guide and Language Reference</description>
+            <file src="documents" targetdir="$INSTALL_PATH"/>
+        </pack>
+
+		<pack name="Examples" required="no">
+			<description>NetRexx sample code</description>
+			<file src="examples" targetdir="$INSTALL_PATH"/>
+		</pack>
+
+		<pack name="Translator" required="yes">
+			<description>The NetRexx compiler</description>
+			<file src="lib" targetdir="$INSTALL_PATH"/>
+		</pack>
+
+		<pack name="Runtime" required="yes">
+			<description>The NetRexx runtime library</description>
+			<file src="runlib" targetdir="$INSTALL_PATH"/>
+		</pack>
+
+		<pack name="Tools" required="no">
+			<description>NetRexx support tools</description>
+			<file src="tools" targetdir="$INSTALL_PATH"/>
+		</pack>
+    </packs>
+
+</installation>
