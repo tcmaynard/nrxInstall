@@ -8,15 +8,15 @@ Find here all the ancillary files required to compile the executable JAR file co
 installation uses [IzPack](http://izpack.org/).
 
 The files are:
-- nrxInstall.xml
-- NetRexxKingSmall.gif
-- TargetPanel.dir.windows
+- nrxInstall.xml            - the installation description
+- NetRexxKingSmall.gif      - the NetRexx logo (splash screen)
+- TargetPanel.dir.windows   - the destination directories for each platform
 - TargetPanel.dir.mac
 - TargetPanel.dir.unix
 
 Drop the files above into a fresh distribution (i.e. unzip the "official" package), put IzPack/bin in your PATH, and
 ```
-compile nrxInstall.xml [-o output.jar]
+compile nrxInstall.xml [-o output.jar -h izpack_root -b netrexx_dist]
 ```
 The default behavior is to name the JAR the same as the XML.
 
