@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+GG<izpack:installation version="5.0"
+                     xmlns:izpack="http://izpack.org/scheme/installation"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
 
 <!-- 
     NetRexx Installation Description, using IzPack v4.x
@@ -16,7 +19,6 @@
     - compile install.xml (i.e. this file)
 -->
 
-<installation version="1.0">
     <!-- 
         The info section.
         The meaning of the tags should be obvious ...
@@ -130,5 +132,6 @@
       <file src="tools" targetdir="$INSTALL_PATH"/>
     </pack>
   </packs>
+                         
+</izpack:installation>
 
-</installation>
